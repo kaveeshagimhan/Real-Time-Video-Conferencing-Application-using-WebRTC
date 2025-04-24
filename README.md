@@ -1,4 +1,5 @@
-WebRTC Video Conferencing App
+*WebRTC Video Conferencing App*
+
 A real-time video conferencing web application built with WebRTC, Socket.IO, and Express, featuring room creation, video chat, screen sharing, chat messaging, emoji support, and media recording.
 
 Live Demo: https://webrtc-25c52.web.app
