@@ -1,4 +1,4 @@
-*WebRTC Video Conferencing App*
+**WebRTC Video Conferencing App**
 
 A real-time video conferencing web application built with WebRTC, Socket.IO, and Express, featuring room creation, video chat, screen sharing, chat messaging, emoji support, and media recording.
 
@@ -6,11 +6,11 @@ Live Demo: https://webrtc-25c52.web.app
 
 Video Demonstration: https://youtu.be/Rb-awdOzcHU
 
-Project Overview
+**Project Overview**
 
 This project demonstrates the capabilities of WebRTC (Web Real-Time Communication) to establish peer-to-peer communication between users via video, audio, and data channels. It integrates real-time signaling using Socket.IO and a custom Express backend hosted on Railway, while the frontend is deployed on Firebase Hosting.
 
- Features
+**Features**
  
 🔗 Room Creation/Joining: Join a room via a unique ID.
 
@@ -26,7 +26,7 @@ This project demonstrates the capabilities of WebRTC (Web Real-Time Communicatio
 
 📹 Recording: Record your video stream locally (in-browser).
 
-Technologies Used
+**Technologies Used**
 
 Frontend:
 
@@ -56,7 +56,7 @@ Deployment:
   
   Railway (Backend)
   
-Project Structure
+**Project Structure**
 
 ├── public/
 
@@ -73,7 +73,7 @@ Project Structure
 ├── package.json   
 
 
-Getting Started Locally
+**Getting Started Locally**
 
 Clone the repository:
 
@@ -93,7 +93,7 @@ Open public/index.html in your browser or host locally using Firebase:
                       firebase serve
 
 
-Deployment
+**Deployment**
 
 Frontend: Deployed using Firebase Hosting.
 
@@ -101,7 +101,7 @@ Frontend: Deployed using Firebase Hosting.
 
 Backend: Hosted on Railway using server.js.
 
-Challenges & Learnings
+**Challenges & Learnings**
 
 WebRTC Signaling: Implemented custom signaling logic using Socket.IO.
 
@@ -113,6 +113,6 @@ Screen Sharing Compatibility: Dealt with varying browser APIs.
 
 Recording with MediaRecorder API: Learned to buffer and save media streams.
 
-License
+**License**
 
 This project is for educational purposes as part of a university WebRTC assignment.
