@@ -74,21 +74,29 @@ Project Structure
 
 Getting Started Locally
 
-Clone the repository:git clone https://github.com/your-username/webrtc-video-app.git
+Clone the repository:
+
+                      git clone https://github.com/kaveeshagimhan/Real-Time-Video-Conferencing-Application-using-WebRTC.git
 
                       cd webrtc-video-app
-Install dependencies:npm install
+Install dependencies:
 
-Run the backend server:node server.js
+                      npm install
 
-Open public/index.html in your browser or host locally using Firebase:firebase serve
+Run the backend server:
+
+                      node server.js
+
+Open public/index.html in your browser or host locally using Firebase:
+
+                      firebase serve
 
 
 Deployment
 
 Frontend: Deployed using Firebase Hosting.
 
-          Set public/ as the hosting directory.
+   Set public/ as the hosting directory.
 
 Backend: Hosted on Railway using server.js.
 
