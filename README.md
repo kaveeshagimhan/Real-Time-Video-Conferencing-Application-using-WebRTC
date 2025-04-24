@@ -2,18 +2,27 @@ WebRTC Video Conferencing App
 A real-time video conferencing web application built with WebRTC, Socket.IO, and Express, featuring room creation, video chat, screen sharing, chat messaging, emoji support, and media recording.
 
 Live Demo: https://webrtc-25c52.web.app
+
 Video Demonstration: https://youtu.be/Rb-awdOzcHU
 
 Project Overview
+
 This project demonstrates the capabilities of WebRTC (Web Real-Time Communication) to establish peer-to-peer communication between users via video, audio, and data channels. It integrates real-time signaling using Socket.IO and a custom Express backend hosted on Railway, while the frontend is deployed on Firebase Hosting.
 
  Features
+ 
 🔗 Room Creation/Joining: Join a room via a unique ID.
+
 🎥 Video & Audio Chat: Connect with peers via live video and audio.
+
 📤 Screen Sharing: Share your screen with others in the room.
+
 💬 Real-time Chat: Send and receive text messages instantly.
+
 😀 Emoji Picker: Add fun and expressiveness to your messages.
+
 🎙️ Media Controls: Toggle microphone, camera, and screen sharing.
+
 📹 Recording: Record your video stream locally (in-browser).
 
 Technologies Used
