@@ -113,6 +113,6 @@ Open public/index.html in your browser or host locally using Firebase:
 
 - Recording with MediaRecorder API: Learned to buffer and save media streams.
 
-**License**
+## License
 
 This project is for educational purposes as part of a university WebRTC assignment.
