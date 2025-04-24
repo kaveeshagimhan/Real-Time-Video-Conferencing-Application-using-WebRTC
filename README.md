@@ -93,25 +93,25 @@ Open public/index.html in your browser or host locally using Firebase:
                       firebase serve
 
 
-**Deployment**
+## Deployment
 
-Frontend: Deployed using Firebase Hosting.
+### Frontend: Deployed using Firebase Hosting.
 
-   Set public/ as the hosting directory.
+   - Set public/ as the hosting directory.
 
-Backend: Hosted on Railway using server.js.
+### Backend: Hosted on Railway using server.js.
 
-**Challenges & Learnings**
+## Challenges & Learnings
 
-WebRTC Signaling: Implemented custom signaling logic using Socket.IO.
+- WebRTC Signaling: Implemented custom signaling logic using Socket.IO.
 
-Peer Connections: Managed connection lifecycle and ICE candidate exchange.
+- Peer Connections: Managed connection lifecycle and ICE candidate exchange.
 
-Media Permissions: Handled browser permissions and fallback cases.
+- Media Permissions: Handled browser permissions and fallback cases.
 
-Screen Sharing Compatibility: Dealt with varying browser APIs.
+- Screen Sharing Compatibility: Dealt with varying browser APIs.
 
-Recording with MediaRecorder API: Learned to buffer and save media streams.
+- Recording with MediaRecorder API: Learned to buffer and save media streams.
 
 **License**
 
