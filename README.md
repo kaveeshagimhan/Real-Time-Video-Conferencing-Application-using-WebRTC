@@ -26,9 +26,9 @@ This project demonstrates the capabilities of WebRTC (Web Real-Time Communicatio
 
 📹 Recording: Record your video stream locally (in-browser).
 
-###**Technologies Used**
+##**Technologies Used**
 
-##Frontend:
+###Frontend:
 
   -HTML, CSS, JavaScript
   
@@ -40,7 +40,7 @@ This project demonstrates the capabilities of WebRTC (Web Real-Time Communicatio
   
   -Realtime DOM manipulation
   
-##Backend:
+###Backend:
 
   -Node.js
   
@@ -50,7 +50,7 @@ This project demonstrates the capabilities of WebRTC (Web Real-Time Communicatio
   
   -Hosted on Railway
   
-##Deployment:
+###Deployment:
 
   -Firebase Hosting (Frontend)
   
