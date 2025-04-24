@@ -26,35 +26,35 @@ This project demonstrates the capabilities of WebRTC (Web Real-Time Communicatio
 
 📹 Recording: Record your video stream locally (in-browser).
 
-**Technologies Used**
+###**Technologies Used**
 
-Frontend:
+##Frontend:
 
-  HTML, CSS, JavaScript
+  -HTML, CSS, JavaScript
   
-  Socket.IO-client
+  -Socket.IO-client
   
-  WebRTC APIs
+  -WebRTC APIs
   
-  Emoji Picker
+  -Emoji Picker
   
-  Realtime DOM manipulation
+  -Realtime DOM manipulation
   
-Backend:
+##Backend:
 
-  Node.js
+  -Node.js
   
-  Express
+  -Express
   
-  Socket.IO (for signaling)
+  -Socket.IO (for signaling)
   
-  Hosted on Railway
+  -Hosted on Railway
   
-Deployment:
+##Deployment:
 
-  Firebase Hosting (Frontend)
+  -Firebase Hosting (Frontend)
   
-  Railway (Backend)
+  -Railway (Backend)
   
 **Project Structure**
 
