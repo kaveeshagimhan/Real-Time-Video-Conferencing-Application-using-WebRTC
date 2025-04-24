@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "*",
+        origin: "https://your-firebase-app.web.app", // Allow only Firebase app
         methods: ["GET", "POST"],
     },
     transports: ["websocket", "polling"],
@@ -22,41 +22,32 @@ io.on("connection", (socket) => {
     console.log("A user connected:", socket.id);
     let currentRoom = null;
 
-    // Handle joining a room
     socket.on("join-room", (roomId, username) => {
-        console.log(`User ${socket.id} attempting to join room ${roomId}`);
-
-        currentRoom = roomId;
-
         if (!rooms[roomId]) {
-            rooms[roomId] = [];
+            return socket.emit("room-not-found", "This room does not exist.");
         }
 
-        // Add the user to the room
+        console.log(`User ${socket.id} attempting to join room ${roomId}`);
+        currentRoom = roomId;
+
         socket.join(roomId);
         rooms[roomId].push({
             id: socket.id,
-            username: username || "Guest", // Use provided username or default to "Guest"
+            username: username || "Guest",
         });
 
-        // Notify existing users about the new user
         socket.to(roomId).emit("user-connected", socket.id, username);
 
-        // Emit existing users in the room to the newly joined user
         const otherUsers = rooms[roomId].filter((user) => user.id !== socket.id);
         socket.emit("room-users", otherUsers);
-
-        console.log(`User ${socket.id} joined room ${roomId}`);
     });
 
-    // Handle sending chat messages
     socket.on("send-message", (message) => {
         if (!currentRoom) return;
 
         const roomUsers = rooms[currentRoom];
         const user = roomUsers && roomUsers.find(u => u.id === socket.id);
         const username = user ? user.username : "Guest";
-
         const isHost = roomUsers && roomUsers.length > 0 && roomUsers[0].id === socket.id;
         const displayName = username + (isHost ? " (Host)" : "");
 
@@ -67,30 +58,25 @@ io.on("connection", (socket) => {
         });
     });
 
-    // Handle WebRTC signaling: Offer
     socket.on("offer", (offer, targetId) => {
         console.log(`Forwarding offer from ${socket.id} to ${targetId}`);
         socket.to(targetId).emit("offer", offer, socket.id);
     });
 
-    // Handle WebRTC signaling: Answer
     socket.on("answer", (answer, targetId) => {
         console.log(`Forwarding answer from ${socket.id} to ${targetId}`);
         socket.to(targetId).emit("answer", answer, socket.id);
     });
 
-    // Handle WebRTC signaling: ICE Candidate
     socket.on("ice-candidate", (candidate, targetId) => {
         console.log(`Forwarding ICE candidate from ${socket.id} to ${targetId}`);
         socket.to(targetId).emit("ice-candidate", candidate, socket.id);
     });
 
-    // Handle leaving a room
     socket.on("leave-room", () => {
         handleDisconnect();
     });
 
-    // Handle user disconnection
     const handleDisconnect = () => {
         if (currentRoom && rooms[currentRoom]) {
             console.log(`User ${socket.id} left room ${currentRoom}`);
@@ -99,7 +85,6 @@ io.on("connection", (socket) => {
             const user = roomUsers && roomUsers.find(u => u.id === socket.id);
             const username = user ? user.username : "Guest";
 
-            // Remove the user from the room
             rooms[currentRoom] = roomUsers.filter((user) => user.id !== socket.id);
 
             if (rooms[currentRoom].length === 0) {
@@ -116,7 +101,7 @@ io.on("connection", (socket) => {
     socket.on("disconnect", handleDisconnect);
 });
 
-// Handle server errors
+// Server error handling
 server.on("error", (error) => {
     console.error("Server error:", error);
 });
