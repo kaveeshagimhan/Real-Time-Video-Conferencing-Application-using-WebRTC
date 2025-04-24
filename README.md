@@ -26,51 +26,84 @@ This project demonstrates the capabilities of WebRTC (Web Real-Time Communicatio
 📹 Recording: Record your video stream locally (in-browser).
 
 Technologies Used
-Frontend:
-  HTML, CSS, JavaScript
-  Socket.IO-client
-  WebRTC APIs
-  Emoji Picker
-  Realtime DOM manipulation
-Backend:
-  Node.js
-  Express
-  Socket.IO (for signaling)
-  Hosted on Railway
-Deployment:
-  Firebase Hosting (Frontend)
-  Railway (Backend)
 
+Frontend:
+
+  HTML, CSS, JavaScript
+  
+  Socket.IO-client
+  
+  WebRTC APIs
+  
+  Emoji Picker
+  
+  Realtime DOM manipulation
+  
+Backend:
+
+  Node.js
+  
+  Express
+  
+  Socket.IO (for signaling)
+  
+  Hosted on Railway
+  
+Deployment:
+
+  Firebase Hosting (Frontend)
+  
+  Railway (Backend)
+  
 Project Structure
+
 ├── public/
+
 │   ├── index.html 
+
 │   ├── main.css 
-│   ├── main.js  
+
+│   ├── main.js
+
 │   └── 404.html 
+
 ├── server.js    
+
 ├── package.json   
 
 
 Getting Started Locally
+
 Clone the repository:git clone https://github.com/your-username/webrtc-video-app.git
+
                       cd webrtc-video-app
 Install dependencies:npm install
+
 Run the backend server:node server.js
+
 Open public/index.html in your browser or host locally using Firebase:firebase serve
 
 
 Deployment
+
 Frontend: Deployed using Firebase Hosting.
+
           Set public/ as the hosting directory.
 
 Backend: Hosted on Railway using server.js.
 
 Challenges & Learnings
+
 WebRTC Signaling: Implemented custom signaling logic using Socket.IO.
+
 Peer Connections: Managed connection lifecycle and ICE candidate exchange.
+
 Media Permissions: Handled browser permissions and fallback cases.
+
 Screen Sharing Compatibility: Dealt with varying browser APIs.
+
 Recording with MediaRecorder API: Learned to buffer and save media streams.
 
 License
+
 This project is for educational purposes as part of a university WebRTC assignment.
