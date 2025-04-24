@@ -26,7 +26,7 @@ This project demonstrates the capabilities of WebRTC (Web Real-Time Communicatio
 
 📹 Recording: Record your video stream locally (in-browser).
 
-##**Technologies Used**
+##Technologies Used
 
 ###Frontend:
 
