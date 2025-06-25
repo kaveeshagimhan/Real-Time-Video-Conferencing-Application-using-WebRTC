@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Conferencing Application</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- Host/Join Room Section -->
+    <div id="room-selection">
+        <div id="host-section">
+            <h1>Create a Room</h1>
+            <button onclick="createRoom()" id="createRoomButton">Create Room</button>
+        </div>
+        <div id="join-section">
+            <h1>Join a Room</h1>
+            <input type="text" id="room" placeholder="Enter Room ID">
+            <input type="text" id="username" placeholder="Enter Your Name">
+            <button onclick="joinRoom()" id="joinButton">Join Room</button>
+        </div>
+    </div>
+
+    <!-- Main App Section -->
+    <div id="app" style="display: none;">
+        <!-- Videos Section -->
+        <div id="videos">
+            <!-- Remote Videos -->
+            <div id="remote-videos"></div>
+            <!-- Local Video Thumbnail -->
+            <div id="local-video-container" class="video-thumbnail">
+                <video id="localVideo" autoplay playsinline muted></video>
+                <div class="username-label">You</div>
+            </div>
+        </div>
+
+        <!-- Chat Box (Bottom-Right Corner) -->
+        <div id="chat">
+            <div class="chat-header">Chat</div>
+            <div id="chatbox"></div>
+            <div id="inputArea">
+                <input type="text" id="messageInput" placeholder="Type a message">
+                <button onclick="toggleEmojiPicker()" id="emojiButton">😄</button>
+                <button onclick="sendMessage()" id="sendButton">Send →</button>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div id="controls">
+            <button onclick="toggleMic()" id="micButton" class="control-button">Mute Mic</button>
+            <button onclick="toggleCamera()" id="cameraButton" class="control-button">Mute Camera</button>
+            <button onclick="toggleScreenShare()" id="screenShareButton" class="control-button">Share Screen</button>
+            <button onclick="startRecording()" id="recordButton" class="control-button">Start Recording</button>
+            <button onclick="endCall()" id="leaveButton" class="control-button leave-button">Leave</button>
+        </div>
+
+        <!-- Emoji Picker -->
+        <div id="emojiPicker" style="display: none;">
+            <div class="emoji" onclick="addEmoji('😊')">😊</div>
+            <div class="emoji" onclick="addEmoji('😂')">😂</div>
+            <div class="emoji" onclick="addEmoji('👍')">👍</div>
+            <div class="emoji" onclick="addEmoji('❤️')">❤️</div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
